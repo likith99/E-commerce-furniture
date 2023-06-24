@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# MERN Shop For Home
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A store of decor items named Shop For Home decided to move  their store to the online platforms and wants their own web application.
+- This e-Commerce website fullfill their needs with beautiful UI
+- This store contains different categorized items related to home decoration.
+They are:
+    - Artificial Plants
+    - Idols and Figurines
+    - Plaques and wall arts
+    - Speciality Lightening
+    - Wall stickers
+    - Living Room Furniture
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## What technologies we used in this application
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- HTML5 and CSS3: Semantic Elements, CSS Grid, Flexbox
+- Bootstrap 5 
+- React: Components, Props, Events, Hooks, Router, Axios
+- Context API: Store, Reducers, Actions
+- Node & Express: Web API, Body Parser, File Upload, JWT
+- MongoDB: Mongoose, Aggregation
+- Development: Git, Github
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Run Locally
 
-### `npm test`
+### 1. Clone repo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+$ git clone https://github.com/Asitha-Karnatakam/Shop_For_Home.git
+$ cd Shop-For-Home
+```
 
-### `npm run build`
+### 2. Create .env File and add the following things
+  - JWT_SECRET="Your secret key"
+  - MONGODB_URI=" your mongourl"
+  - CLOUDINARY_CLOUD_NAME="your cloud name"
+  - CLOUDINARY_API_KEY="your cloudinary api key"
+  - CLOUDINARY_URL=CLOUDINARY_URL="your cloudinary url"
+  - CLOUDINARY_API_SECRET="your cloudinary api secret"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. Setup MongoDB
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Local MongoDB
+  - Install it from [here](https://www.mongodb.com/try/download/community)
+  - In .env file update MONGODB_URI=mongodb://localhost/shop_for_home
+- OR Atlas Cloud MongoDB
+  - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
+  - In .env file update MONGODB_URI=mongodb+srv://your-db-connection
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. Run Backend
 
-### `npm run eject`
+```
+$ cd backend
+$ npm install
+$ npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 5. Run Frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+# open new terminal
+$ cd frontend
+$ npm install
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 6. Seed Users and Products
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Run this on browser: http://localhost:5000/api/seed
+- It returns admin email and password and 6 sample products
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 7. Admin Login
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Run http://localhost:3000/signin
+- Enter admin email and password and click signin
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 8. Swagger Docs
+- Run http://localhost:5000/docs
+- login as admin using admin data in data.js
+- and paste the token in authorized area and perform crud on users using their ID
